@@ -23,5 +23,11 @@ position = Vector2(422, 105)
 [node name="Waypoint2" parent="waypoints" instance=ExtResource("3_mdg6f")]
 position = Vector2(466, 244)
 
+[node name="Waypoint3" parent="waypoints" instance=ExtResource("3_mdg6f")]
+position = Vector2(288.153, 313.561)
+
+[node name="Waypoint4" parent="waypoints" instance=ExtResource("3_mdg6f")]
+position = Vector2(174.888, 128.562)
+
 [node name="Camera" parent="." instance=ExtResource("4_yq0uk")]
 position = Vector2(466, 244)

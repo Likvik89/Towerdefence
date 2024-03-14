@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dogb53f8aoxrx"]
+[gd_scene load_steps=3 format=3 uid="uid://dogb53f8aoxrx"]
 
 [ext_resource type="Texture2D" uid="uid://cgmribhewb4hq" path="res://Sprites/New Piskel.png" id="1_oorlx"]
 
-[node name="Waypoint" type="Node2D" groups=["waypoints"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_csit1"]
+radius = 14.0
+
+[node name="Waypoint" type="Area2D" groups=["waypoints"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_oorlx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_csit1")

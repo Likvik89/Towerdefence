@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Towerdefence (start)"
+config/name="Towerdefence (proof of concept)"
 run/main_scene="res://Scenes/lvl.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Sprites/icon.svg"

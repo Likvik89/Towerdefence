@@ -12,6 +12,7 @@ scale = Vector2(2.3825, 2.3825)
 texture = ExtResource("1_s0a5k")
 
 [node name="Enemy" parent="." instance=ExtResource("2_pf22n")]
+position = Vector2(297, 0)
 
 [node name="waypoints" type="Node2D" parent="."]
 unique_name_in_owner = true

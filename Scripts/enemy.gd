@@ -4,6 +4,8 @@ var waypoints = []
 var waypoint_reached = 0
 var speed = 500
 var maxspeed = 500
+var health = 10
+
 
 func _ready():
 	for waypoint in %waypoints.get_children():
@@ -33,7 +35,10 @@ func _on_area_2d_body_entered(waypoint):
 func _on_area_2d_area_entered(area):
 	if area.is_in_group('waypoints'):
 		waypoint_reached += 1
+	#	if waypoint_reached > waypoints.size():
+		#	GlobalInfo.health -= health
+			#queue_free()
+		
 		linear_velocity = Vector2(0,0)
-		#apply_central_impulse(-linear_velocity.normalized()*speed*4)
 		var way = (waypoints[waypoint_reached].position-position).normalized()
 		apply_central_impulse(way*speed*3)

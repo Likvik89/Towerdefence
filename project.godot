@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/lvl.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+GlobalInfo="*res://Scripts/Global_info.gd"
+
 [input]
 
 move_up={

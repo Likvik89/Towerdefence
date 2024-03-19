@@ -26,19 +26,19 @@ func _process(delta):
 	#print(waypoint_reached)
 
 
-func _on_area_2d_body_entered(waypoint):
-	if waypoint.is_in_group('waypoints'):
-		waypoint_reached += 1
+#func _on_area_2d_body_entered(waypoint):
+#	if waypoint.is_in_group('waypoints'):
+#		waypoint_reached += 1
 
 
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group('waypoints'):
-		waypoint_reached += 1
-	#	if waypoint_reached > waypoints.size():
-		#	GlobalInfo.health -= health
-			#queue_free()
-		
-		linear_velocity = Vector2(0,0)
-		var way = (waypoints[waypoint_reached].position-position).normalized()
-		apply_central_impulse(way*speed*3)
+		if waypoint_reached == waypoints.size()-1:
+			GlobalInfo.health -= health
+			queue_free()
+		else:
+			waypoint_reached += 1
+			linear_velocity = Vector2(0,0)
+			var way = (waypoints[waypoint_reached].position-position).normalized()
+			apply_central_impulse(way*speed*3)

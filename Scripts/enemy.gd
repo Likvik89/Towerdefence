@@ -25,7 +25,7 @@ func take_damage(damage):
 	health -= damage
 
 func _process(delta):
-	if health <= maxhealth:
+	if health <= 0:
 		queue_free()
 	
 

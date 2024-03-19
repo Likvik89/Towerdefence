@@ -1,16 +1,27 @@
 extends RigidBody2D
 
 var _position
-var speed = 30
+var speed = 3000
 
+
+var module_spin = false
+var rotationspeed = 2
+
+var module_homing = false
 
 
 
 func _ready():
-	look_at(_position)
+	pass
 
+func _physics_process(delta):
+	var direction = (_position-position).normalized()
+	apply_central_impulse(direction)
+	
 
 func _process(delta):
-	var direction = Vector2(0,1) * rotation
-	linear_velocity = direction * speed
+	
+	if module_spin:
+		rotation += rotationspeed
+	print(rotation)
 	

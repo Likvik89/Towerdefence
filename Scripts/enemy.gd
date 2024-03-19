@@ -5,6 +5,7 @@ var waypoint_reached = 0
 var speed = 500
 var maxspeed = 500
 var health = 10
+var maxhealth = 10
 
 
 func _ready():
@@ -13,17 +14,20 @@ func _ready():
 			waypoints.append(waypoint)
 	var way = (waypoints[waypoint_reached].position-position).normalized()
 	apply_central_force(way*speed*3)
-	
+
 
 func _integrate_forces(state):
-	pass
 	var way = (waypoints[waypoint_reached].position-position).normalized()
 	if linear_velocity.length() <= maxspeed:
 		apply_central_force(way*speed)
 
+func take_damage(damage):
+	health -= damage
+
 func _process(delta):
-	pass
-	#print(waypoint_reached)
+	if health <= maxhealth:
+		queue_free()
+	
 
 
 func _on_area_2d_area_entered(area):

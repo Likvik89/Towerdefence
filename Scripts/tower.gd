@@ -1,12 +1,12 @@
 extends Node2D
 
-
 @export var bullet : PackedScene
 var firingspeed = 5
 var cooldown = 0
 
+#modules
 var bulletmodule_spin = true
-
+var bulletmodule_homing = false
 
 func shoot():
 	var prjctl = bullet.instantiate()
@@ -15,6 +15,8 @@ func shoot():
 	
 	if bulletmodule_spin:
 		prjctl.module_spin = true
+	if bulletmodule_homing:
+		prjctl.module_homing = true
 	
 	get_tree().root.add_child(prjctl)
 

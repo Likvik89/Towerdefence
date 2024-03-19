@@ -26,12 +26,6 @@ func _process(delta):
 	#print(waypoint_reached)
 
 
-#func _on_area_2d_body_entered(waypoint):
-#	if waypoint.is_in_group('waypoints'):
-#		waypoint_reached += 1
-
-
-
 func _on_area_2d_area_entered(area):
 	if area.is_in_group('waypoints'):
 		if waypoint_reached == waypoints.size()-1:

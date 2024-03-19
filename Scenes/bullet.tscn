@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_tcr6r"]
 
 [node name="Bullet" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource("1_tcr6r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

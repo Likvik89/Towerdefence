@@ -8,7 +8,6 @@ radius = 0.0
 
 [node name="Bullet" type="RigidBody2D"]
 gravity_scale = 0.0
-lock_rotation = true
 script = ExtResource("1_tcr6r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

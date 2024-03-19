@@ -6,9 +6,8 @@ extends Node2D
 
 func shoot():
 	var prjctl = bullet.instantiate()
-	
-	
-	pass
+	prjctl._position = $Marker2D.position
+	get_tree().root.add_child(prjctl)
 
 
 func _process(delta):

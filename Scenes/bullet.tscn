@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwrmstbspeayy"]
+[gd_scene load_steps=3 format=3 uid="uid://dwrmstbspeayy"]
 
 [ext_resource type="Texture2D" uid="uid://dpxjq5nvbvok2" path="res://Sprites/Bullet.png" id="1_j2wk2"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_tcr6r"]
 
 [node name="Bullet" type="RigidBody2D"]
+script = ExtResource("1_tcr6r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j2wk2")

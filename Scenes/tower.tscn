@@ -11,3 +11,5 @@ bullet = ExtResource("2_0nfj5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(7, 7)
 texture = ExtResource("1_n3ond")
+
+[node name="Marker2D" type="Marker2D" parent="."]

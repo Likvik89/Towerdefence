@@ -11,13 +11,13 @@ var module_homing = false
 
 func _ready():
 	var direction = (_position-position).normalized()
-	apply_central_impulse(direction*speed)
-
-
+	#apply_central_impulse(direction*speed)
+	linear_velocity = direction*speed
 
 func _process(delta):
 	
-	if module_spin:
+	if module_spin and angular_velocity <= rotationspeed:
 		angular_velocity += rotationspeed
-	print(rotation)
 	
+	print(rotation)
+	pass

@@ -15,7 +15,9 @@ texture = ExtResource("1_s0a5k")
 [node name="Enemy" parent="." instance=ExtResource("2_pf22n")]
 position = Vector2(297, 0)
 
-[node name="Tower" parent="." instance=ExtResource("3_mve0n")]
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Tower" parent="Towers" instance=ExtResource("3_mve0n")]
 position = Vector2(317, 161)
 
 [node name="waypoints" type="Node2D" parent="."]

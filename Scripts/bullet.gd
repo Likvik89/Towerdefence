@@ -19,7 +19,7 @@ var current_pierce = 0
 
 var module_blade = false
 var blade_targets = []
-
+var blade_damage = damage/2
 
 
 func _ready():

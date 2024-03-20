@@ -12,14 +12,6 @@
 scale = Vector2(2.3825, 2.3825)
 texture = ExtResource("1_s0a5k")
 
-[node name="Enemy" parent="." instance=ExtResource("2_pf22n")]
-position = Vector2(297, 0)
-
-[node name="Towers" type="Node2D" parent="."]
-
-[node name="Tower" parent="Towers" instance=ExtResource("3_mve0n")]
-position = Vector2(317, 161)
-
 [node name="waypoints" type="Node2D" parent="."]
 unique_name_in_owner = true
 
@@ -34,6 +26,19 @@ position = Vector2(243, 359)
 
 [node name="Waypoint4" parent="waypoints" instance=ExtResource("3_mdg6f")]
 position = Vector2(118, 73)
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Tower" parent="Towers" instance=ExtResource("3_mve0n")]
+position = Vector2(317, 161)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_pf22n")]
+position = Vector2(297, 0)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_pf22n")]
+position = Vector2(249, -105)
 
 [node name="Camera" parent="." instance=ExtResource("4_yq0uk")]
 position = Vector2(320, 174)

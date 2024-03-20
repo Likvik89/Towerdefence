@@ -1,11 +1,14 @@
 extends RigidBody2D
 
+
 var waypoints = []
 var waypoint_reached = 0
 var speed = 500
-var maxspeed = 500
+
+#navigation
+const maxspeed = 500
 var health = 10
-var maxhealth = 10
+const maxhealth = 10
 
 
 func _ready():

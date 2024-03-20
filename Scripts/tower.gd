@@ -8,6 +8,7 @@ var cooldown = 0
 var bulletmodule_spin = true
 var bulletmodule_homing = false
 var bulletmodule_piercing = true
+var bulletmodule_blade = false
 
 func shoot():
 	var prjctl = bullet.instantiate()
@@ -20,6 +21,8 @@ func shoot():
 		prjctl.module_homing = true
 	if bulletmodule_piercing:
 		prjctl.module_piercing = true
+	if bulletmodule_blade:
+		prjctl.module_blade = true
 	
 	get_tree().root.add_child(prjctl)
 

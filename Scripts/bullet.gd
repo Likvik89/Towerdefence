@@ -18,11 +18,15 @@ var pierce_limit = 2
 var current_pierce = 0
 
 var module_blade = false
-var blade_targets = []
-var blade_damage = damage/2
+var blade_damage = 1
+@export var bullet_blade : PackedScene
 
 
 func _ready():
+	var blade = bullet_blade.instantiate()
+	blade.position = position
+	blade.damage = blade_damage
+	
 	var direction = (_position-position).normalized()
 	linear_velocity = direction*speed
 

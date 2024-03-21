@@ -24,8 +24,8 @@ var blade_damage = 1
 
 func _ready():
 	var blade = bullet_blade.instantiate()
-	blade.position = position
 	blade.damage = blade_damage
+	add_child(blade)
 	
 	var direction = (_position-position).normalized()
 	linear_velocity = direction*speed

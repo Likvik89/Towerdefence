@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwrmstbspeayy"]
+[gd_scene load_steps=6 format=3 uid="uid://dwrmstbspeayy"]
 
 [ext_resource type="Texture2D" uid="uid://dpxjq5nvbvok2" path="res://Sprites/Bullet.png" id="1_j2wk2"]
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_tcr6r"]
@@ -7,9 +7,6 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vadgw"]
 friction = 0.0
 bounce = 0.12
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_a5h4s"]
-radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0j0mu"]
 
@@ -22,9 +19,6 @@ bullet_blade = ExtResource("2_8pf3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j2wk2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_a5h4s")
 
 [node name="Area2D" type="Area2D" parent="."]
 

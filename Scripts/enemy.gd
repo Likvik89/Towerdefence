@@ -7,7 +7,8 @@ var speed = 500
 
 #navigation
 const maxspeed = 500
-var health = 10
+var health = 20
+var alive = true
 const maxhealth = 10
 
 
@@ -29,6 +30,7 @@ func take_damage(damage):
 
 func _process(delta):
 	if health <= 0:
+		alive = false
 		queue_free()
 	
 

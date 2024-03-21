@@ -35,7 +35,7 @@ position = Vector2(317, 161)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("2_pf22n")]
-position = Vector2(297, 0)
+position = Vector2(306, 1)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("2_pf22n")]
 position = Vector2(249, -105)

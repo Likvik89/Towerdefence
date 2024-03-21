@@ -6,9 +6,9 @@ var cooldown = 0
 
 #modules
 var bulletmodule_spin = true
-var bulletmodule_homing = false
-var bulletmodule_piercing = true
-var bulletmodule_blade = false
+var bulletmodule_homing = true
+var bulletmodule_piercing = false
+var bulletmodule_blade = true
 
 func shoot():
 	var prjctl = bullet.instantiate()

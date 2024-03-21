@@ -27,6 +27,7 @@ func _integrate_forces(state):
 
 func take_damage(damage):
 	health -= damage
+	print(health)
 
 func _process(delta):
 	if health <= 0:

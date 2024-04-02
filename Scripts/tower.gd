@@ -6,7 +6,7 @@ var cooldown = 0
 
 #modules
 var bulletmodule_spin = true
-var bulletmodule_homing = true
+var bulletmodule_homing = false
 var bulletmodule_piercing = false
 var bulletmodule_blade = true
 
@@ -25,7 +25,6 @@ func shoot():
 		prjctl.module_blade = true
 	
 	get_tree().root.add_child(prjctl)
-
 
 func _process(delta):
 	if cooldown <= 0:

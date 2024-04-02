@@ -43,11 +43,12 @@ func _physics_process(delta):
 						closest_homing_target = target
 				else:
 					closest_homing_target = target
+		if closest_homing_target != null:
+			var direction = (closest_homing_target.global_position-global_position).normalized()
 		
-		var direction = (closest_homing_target.global_position-global_position).normalized()
-		
-		linear_velocity += direction*homing_speed
+			linear_velocity += direction*homing_speed
 		pass
+
 
 #Spinning
 func _process(delta):

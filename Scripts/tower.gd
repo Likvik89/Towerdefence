@@ -11,10 +11,10 @@ var firingspeed = 5
 var cooldown = 0.1
 
 #modules
-var bulletmodule_spin = true
-var bulletmodule_homing = true
+var bulletmodule_spin = false
+var bulletmodule_homing = false
 var bulletmodule_piercing = false
-var bulletmodule_blade = true
+var bulletmodule_blade = false
 
 func shoot():
 	var prjctl = bullet.instantiate()
@@ -49,7 +49,6 @@ func _process(delta):
 		if Input.is_action_just_pressed("right_mouse"):
 			GlobalInfo.money += cost
 			queue_free()
-		
 		can_shoot = false
 	else: can_shoot = true
 	

@@ -16,7 +16,7 @@ var bulletmodule_blade = true
 func shoot():
 	var prjctl = bullet.instantiate()
 	prjctl.position = global_position
-	prjctl._position = $Marker2D.global_position
+	prjctl._position = $AdvancedTargetingSystems.global_position
 	
 	if bulletmodule_spin:
 		prjctl.module_spin = true
@@ -44,6 +44,8 @@ func _process(delta):
 		if Input.is_action_just_pressed("left_mouse"):
 			dragging = false
 		if Input.is_action_just_pressed("right_mouse"):
+			GlobalInfo.money += cost
 			queue_free()
+		
 		can_shoot = false
 	else: can_shoot = true

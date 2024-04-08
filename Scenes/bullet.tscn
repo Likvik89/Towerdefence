@@ -11,7 +11,7 @@ bounce = 0.12
 [sub_resource type="CircleShape2D" id="CircleShape2D_0j0mu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f3bsj"]
-radius = 88.0511
+radius = 100.005
 
 [node name="Bullet" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_vadgw")

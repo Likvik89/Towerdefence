@@ -18,3 +18,4 @@ func _on_tower_pressed():
 	
 	if GlobalInfo.money >= towr.cost:
 		get_tree().root.add_child(towr)
+		GlobalInfo.money -= towr.cost

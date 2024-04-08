@@ -11,7 +11,7 @@ var module_spin = false
 var rotationspeed = 14
 
 var module_homing = false
-var homing_speed = 20
+var homing_speed = 7
 var closest_homing_target
 
 var module_piercing = false

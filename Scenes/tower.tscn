@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://r3omelyt71hr"]
+[gd_scene load_steps=6 format=3 uid="uid://r3omelyt71hr"]
 
 [ext_resource type="Script" path="res://Scripts/tower.gd" id="1_fe4is"]
 [ext_resource type="Texture2D" uid="uid://u465rh8rw7m6" path="res://Sprites/Tower.png" id="1_n3ond"]
 [ext_resource type="PackedScene" uid="uid://dwrmstbspeayy" path="res://Scenes/bullet.tscn" id="2_0nfj5"]
 [ext_resource type="Texture2D" uid="uid://7fwak5gfyuju" path="res://Sprites/Tower_Crosshair.png" id="4_h5vch"]
+[ext_resource type="Texture2D" uid="uid://brusrqjfhrkuy" path="res://Sprites/Tower_Outline.png" id="4_rm1yc"]
 
 [node name="Tower" type="Node2D" groups=["towers"]]
 script = ExtResource("1_fe4is")
@@ -12,6 +13,11 @@ bullet = ExtResource("2_0nfj5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(7, 7)
 texture = ExtResource("1_n3ond")
+
+[node name="Outline" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(7, 7)
+texture = ExtResource("4_rm1yc")
 
 [node name="AdvancedTargetingSystems" type="Marker2D" parent="."]
 position = Vector2(41, -86)

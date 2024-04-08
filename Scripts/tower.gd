@@ -1,11 +1,14 @@
 extends Node2D
 
-@export var bullet : PackedScene
-var firingspeed = 5
-var cooldown = 0.1
 const cost = 300
 var dragging = false
 var can_shoot = true
+var hightlighted = false
+var clicked = false
+
+@export var bullet : PackedScene
+var firingspeed = 5
+var cooldown = 0.1
 
 #modules
 var bulletmodule_spin = true
@@ -49,3 +52,21 @@ func _process(delta):
 		
 		can_shoot = false
 	else: can_shoot = true
+	
+	if hightlighted:
+		$Outline.visible = true
+		if Input.is_action_just_pressed("left_mouse"):
+			clicked = true
+	elif not hightlighted and not clicked:
+		$Outline.visible = false
+	
+	if clicked:
+		if (Input.is_action_just_pressed("left_mouse") and not hightlighted) or Input.is_action_just_pressed("right_mouse"):
+			clicked = false
+		pass
+
+
+func _on_highligt_area_mouse_entered():
+	hightlighted = true
+func _on_highligt_area_mouse_exited():
+	hightlighted = false

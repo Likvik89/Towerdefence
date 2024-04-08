@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmsgf61gs64f3"
-path="res://.godot/imported/Waypoint.png-e02648ff4b4e0d6196507f2003d1d6d6.ctex"
+uid="uid://cgmribhewb4hq"
+path="res://.godot/imported/EnemySpawner.png-5f742bcfb3eb3574603a5222769738c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Waypoint.png"
-dest_files=["res://.godot/imported/Waypoint.png-e02648ff4b4e0d6196507f2003d1d6d6.ctex"]
+source_file="res://Sprites/EnemySpawner.png"
+dest_files=["res://.godot/imported/EnemySpawner.png-5f742bcfb3eb3574603a5222769738c5.ctex"]
 
 [params]
 

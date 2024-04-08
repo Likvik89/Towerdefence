@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dogb53f8aoxrx"]
 
-[ext_resource type="Texture2D" uid="uid://cgmribhewb4hq" path="res://Sprites/Waypoint.png" id="1_oorlx"]
+[ext_resource type="Texture2D" uid="uid://bmsgf61gs64f3" path="res://Sprites/Waypoint.png" id="1_oorlx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_csit1"]
 radius = 14.0

@@ -18,6 +18,3 @@ func _on_tower_pressed():
 	
 	if GlobalInfo.money >= towr.cost:
 		get_tree().root.add_child(towr)
-		print("bought")
-		pass
-	pass # Replace with function body.

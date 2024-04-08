@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmsgf61gs64f3"
-path="res://.godot/imported/Waypoint.png-e02648ff4b4e0d6196507f2003d1d6d6.ctex"
+uid="uid://7fwak5gfyuju"
+path="res://.godot/imported/Tower_Crosshair.png-b8b1f927986ad3834817177500bb281c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Waypoint.png"
-dest_files=["res://.godot/imported/Waypoint.png-e02648ff4b4e0d6196507f2003d1d6d6.ctex"]
+source_file="res://Sprites/Tower_Crosshair.png"
+dest_files=["res://.godot/imported/Tower_Crosshair.png-b8b1f927986ad3834817177500bb281c.ctex"]
 
 [params]
 

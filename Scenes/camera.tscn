@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg3vy51cgk71m"]
+[gd_scene load_steps=3 format=3 uid="uid://dg3vy51cgk71m"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_7mquw"]
+[ext_resource type="PackedScene" uid="uid://bqyn2thxbvvvx" path="res://Scenes/ui_gameplay.tscn" id="2_3dbqj"]
 
 [node name="Camera" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_7mquw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Ui_gameplay" parent="." instance=ExtResource("2_3dbqj")]
+offset_left = -576.0
+offset_top = -322.0
+offset_right = 574.0
+offset_bottom = 322.0
+mouse_filter = 1

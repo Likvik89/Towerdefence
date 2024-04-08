@@ -2,7 +2,10 @@ extends Node2D
 
 @export var bullet : PackedScene
 var firingspeed = 5
-var cooldown = 0
+var cooldown = 0.1
+const cost = 300
+var dragging = false
+var can_shoot = true
 
 #modules
 var bulletmodule_spin = true
@@ -27,9 +30,20 @@ func shoot():
 	get_tree().root.add_child(prjctl)
 
 func _process(delta):
-	if cooldown <= 0:
-		shoot()
-		cooldown = firingspeed
-	else:
-		cooldown -= delta 
-
+	if can_shoot:
+		if cooldown <= 0:
+			shoot()
+			cooldown = firingspeed
+		else:
+			cooldown -= delta
+	
+	if dragging:
+		var mouse_motion = InputEventMouseMotion
+		if mouse_motion:
+			global_position = get_global_mouse_position()
+		if Input.is_action_just_pressed("left_mouse"):
+			dragging = false
+		if Input.is_action_just_pressed("right_mouse"):
+			queue_free()
+		can_shoot = false
+	else: can_shoot = true

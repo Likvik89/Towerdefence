@@ -13,5 +13,11 @@ func _process(delta):
 
 
 func _on_tower_pressed():
+	var towr = tower.instantiate()
+	towr.dragging = true
 	
+	if GlobalInfo.money >= towr.cost:
+		get_tree().root.add_child(towr)
+		print("bought")
+		pass
 	pass # Replace with function body.

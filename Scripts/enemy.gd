@@ -4,6 +4,7 @@ extends RigidBody2D
 var waypoints = []
 var waypoint_reached = 0
 var speed = 500
+const bounty = 150
 
 #navigation
 const maxspeed = 500
@@ -32,6 +33,7 @@ func take_damage(damage):
 func _process(delta):
 	if health <= 0:
 		alive = false
+		GlobalInfo.money += bounty
 		queue_free()
 	
 

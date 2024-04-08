@@ -20,5 +20,6 @@ offset_bottom = 40.0
 
 [node name="Tower" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+text = "Tower"
 
 [connection signal="pressed" from="HBoxContainer/Tower" to="." method="_on_tower_pressed"]

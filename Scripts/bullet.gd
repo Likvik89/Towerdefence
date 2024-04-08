@@ -8,14 +8,14 @@ var lifespan
 
 #modules
 var module_spin = false
-var rotationspeed = 6
+var rotationspeed = 14
 
 var module_homing = false
 var homing_speed = 20
 var closest_homing_target
 
 var module_piercing = false
-var pierce_limit = 2
+var max_pierce = 2
 var current_pierce = 0
 
 var module_blade = false
@@ -63,7 +63,7 @@ func _on_area_2d_body_entered(body):
 		body.take_damage(damage)
 		if module_piercing:
 			current_pierce += 1
-			if current_pierce >= pierce_limit:
+			if current_pierce >= max_pierce:
 				queue_free()
 		else:
 			queue_free()

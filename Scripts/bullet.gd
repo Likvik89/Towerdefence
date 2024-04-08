@@ -39,7 +39,7 @@ func _physics_process(delta):
 		for target in $"Homing area".get_overlapping_bodies():
 			if target.is_in_group("enemies"):
 				if closest_homing_target != null:
-					if global_position.distance_to(target.global_position) < global_position.distance_to(closest_homing_target):
+					if global_position.distance_to(target.global_position) < global_position.distance_to(closest_homing_target.global_position):
 						closest_homing_target = target
 				else:
 					closest_homing_target = target

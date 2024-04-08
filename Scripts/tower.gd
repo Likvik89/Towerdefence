@@ -63,7 +63,9 @@ func _process(delta):
 	if clicked:
 		if (Input.is_action_just_pressed("left_mouse") and not hightlighted) or Input.is_action_just_pressed("right_mouse"):
 			clicked = false
-		pass
+		$AdvancedTargetingSystems/Crosshairs.visible = true
+	else:
+		$AdvancedTargetingSystems/Crosshairs.visible = false
 
 
 func _on_highligt_area_mouse_entered():

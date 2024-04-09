@@ -79,6 +79,16 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Spin"
 
+[node name="Blade" type="Button" parent="CanvasLayer/UI_elements"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Blade"
+
+[node name="Pierce" type="Button" parent="CanvasLayer/UI_elements"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pierce"
+
 [connection signal="mouse_entered" from="HighligtArea" to="." method="_on_highligt_area_mouse_entered"]
 [connection signal="mouse_exited" from="HighligtArea" to="." method="_on_highligt_area_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/UI_elements/Sell" to="." method="_on_sell_mouse_entered"]
@@ -90,3 +100,9 @@ text = "Spin"
 [connection signal="mouse_entered" from="CanvasLayer/UI_elements/Spin" to="." method="_on_spin_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/UI_elements/Spin" to="." method="_on_spin_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/UI_elements/Spin" to="." method="_on_spin_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UI_elements/Blade" to="." method="_on_blade_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UI_elements/Blade" to="." method="_on_blade_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/UI_elements/Blade" to="." method="_on_blade_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UI_elements/Pierce" to="." method="_on_pierce_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UI_elements/Pierce" to="." method="_on_pierce_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/UI_elements/Pierce" to="." method="_on_pierce_pressed"]

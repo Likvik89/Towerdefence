@@ -17,7 +17,7 @@ const spin_cost = 50
 var bulletmodule_homing = false
 const homing_cost = 100
 var bulletmodule_piercing = false
-const peircing_cost = 100
+const piercing_cost = 100
 var bulletmodule_blade = false
 const blade_cost = 100
 
@@ -116,3 +116,26 @@ func _on_spin_pressed():
 		bulletmodule_spin = true
 		$CanvasLayer/UI_elements/Spin.visible = false
 		GlobalInfo.money -= spin_cost
+
+
+func _on_blade_mouse_entered():
+	button_hovered = true
+func _on_blade_mouse_exited():
+	button_hovered = false
+func _on_blade_pressed():
+	if (GlobalInfo.money >= blade_cost) and not bulletmodule_blade:
+		bulletmodule_blade = true
+		$CanvasLayer/UI_elements/Blade.visible = false
+		GlobalInfo.money -= blade_cost
+
+
+func _on_pierce_mouse_entered():
+	button_hovered = true
+func _on_pierce_mouse_exited():
+	button_hovered = false
+func _on_pierce_pressed():
+	if (GlobalInfo.money >= piercing_cost) and not bulletmodule_piercing:
+		bulletmodule_piercing = true
+		$CanvasLayer/UI_elements/Pierce.visible = false
+		GlobalInfo.money -= piercing_cost
+

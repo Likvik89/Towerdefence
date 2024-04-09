@@ -1,6 +1,7 @@
 extends Node2D
 
 const cost = 300
+var sellingprice = cost*0.75
 var dragging = false
 var can_shoot = true
 var hightlighted = false
@@ -60,14 +61,28 @@ func _process(delta):
 		$Outline.visible = false
 	
 	if clicked:
-		if (Input.is_action_just_pressed("left_mouse") and not hightlighted) or Input.is_action_just_pressed("right_mouse"):
+		if (Input.is_action_just_pressed("left_mouse") and not (hightlighted or button_hovered)) or Input.is_action_just_pressed("right_mouse"):
 			clicked = false
 		$AdvancedTargetingSystems/Crosshairs.visible = true
+		$UI_elements.visible = true
 	else:
 		$AdvancedTargetingSystems/Crosshairs.visible = false
-
+		if not button_hovered:
+			$UI_elements.visible = false
+var button_hovered = false
 
 func _on_highligt_area_mouse_entered():
 	hightlighted = true
 func _on_highligt_area_mouse_exited():
 	hightlighted = false
+
+
+var sell_hovered = false
+
+func _on_sell_mouse_entered():
+	button_hovered = true
+	sell_hovered = true
+	print("you can sell this")
+func _on_sell_mouse_exited():
+	button_hovered = false
+	sell_hovered = false

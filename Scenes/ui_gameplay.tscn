@@ -13,10 +13,18 @@ grow_vertical = 2
 script = ExtResource("1_vltyp")
 tower = ExtResource("2_lr8e7")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Life" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Money" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="Tower" type="Button" parent="HBoxContainer"]
 layout_mode = 2

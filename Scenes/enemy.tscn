@@ -7,8 +7,8 @@
 radius = 23.3452
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vaa6m"]
-radius = 41.0
-height = 118.0
+radius = 17.0
+height = 52.0
 
 [node name="Enemy" type="RigidBody2D" groups=["enemies"]]
 mass = 20.0
@@ -17,7 +17,7 @@ lock_rotation = true
 script = ExtResource("1_unj6i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(7.86667, 8.37013)
+scale = Vector2(3.862, 4.109)
 texture = ExtResource("2_ctsfo")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -26,7 +26,7 @@ texture = ExtResource("2_ctsfo")
 shape = SubResource("CircleShape2D_6xwwd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vaa6m")
 

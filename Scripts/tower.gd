@@ -65,7 +65,7 @@ func _process(delta):
 		$Outline.visible = false
 	
 	if clicked:
-		if (Input.is_action_just_pressed("left_mouse") and not (hightlighted or button_hovered)) or Input.is_action_just_pressed("right_mouse"):
+		if (Input.is_action_just_pressed("left_mouse") and not hightlighted) or Input.is_action_just_pressed("right_mouse"):
 			clicked = false
 		$AdvancedTargetingSystems/Crosshairs.visible = true
 		$CanvasLayer.visible = true
@@ -82,14 +82,10 @@ func _on_highligt_area_mouse_exited():
 
 #making buttons interactable
 var button_hovered = false
-func _on_button_area_mouse_entered():
-	button_hovered = true
-	print("button")
-func _on_button_area_mouse_exited():
-	button_hovered = false
 
-
-func _on_sell_mouse_entered():
+func _on_sell_pressed():
 	print("sell")
-	pass # Replace with function body.
-
+func _on_sell_mouse_entered():
+	button_hovered = true
+func _on_sell_mouse_exited():
+	button_hovered = false

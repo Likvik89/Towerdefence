@@ -69,20 +69,17 @@ func _process(delta):
 		$AdvancedTargetingSystems/Crosshairs.visible = false
 		if not button_hovered:
 			$UI_elements.visible = false
-var button_hovered = false
 
+#highlighting the tower
 func _on_highligt_area_mouse_entered():
 	hightlighted = true
 func _on_highligt_area_mouse_exited():
 	hightlighted = false
 
-
-var sell_hovered = false
-
-func _on_sell_mouse_entered():
+#making buttons interactable
+var button_hovered = false
+func _on_button_area_mouse_entered():
 	button_hovered = true
-	sell_hovered = true
-	print("you can sell this")
-func _on_sell_mouse_exited():
+	print("button")
+func _on_button_area_mouse_exited():
 	button_hovered = false
-	sell_hovered = false

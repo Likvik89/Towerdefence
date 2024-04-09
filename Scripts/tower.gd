@@ -8,7 +8,7 @@ var hightlighted = false
 var clicked = false
 
 @export var bullet : PackedScene
-var firingspeed = 5
+var firingspeed = 3
 var cooldown = 0.1
 
 #modules
@@ -95,7 +95,6 @@ func _on_sell_pressed():
 	queue_free()
  
 
-
 func _on_homing_mouse_entered():
 	button_hovered = true
 func _on_homing_mouse_exited():
@@ -106,3 +105,14 @@ func _on_homing_pressed():
 		$CanvasLayer/UI_elements/Homing.visible = false
 		GlobalInfo.money -= homing_cost
 
+
+
+func _on_spin_mouse_entered():
+	button_hovered = true
+func _on_spin_mouse_exited():
+	button_hovered = false
+func _on_spin_pressed():
+	if (GlobalInfo.money >= spin_cost) and not bulletmodule_spin:
+		bulletmodule_spin = true
+		$CanvasLayer/UI_elements/Spin.visible = false
+		GlobalInfo.money -= spin_cost

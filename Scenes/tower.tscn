@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://r3omelyt71hr"]
+[gd_scene load_steps=10 format=3 uid="uid://r3omelyt71hr"]
 
 [ext_resource type="Script" path="res://Scripts/tower.gd" id="1_fe4is"]
 [ext_resource type="Texture2D" uid="uid://u465rh8rw7m6" path="res://Sprites/Tower.png" id="1_n3ond"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7fwak5gfyuju" path="res://Sprites/Tower_Crosshair.png" id="4_h5vch"]
 [ext_resource type="Texture2D" uid="uid://brusrqjfhrkuy" path="res://Sprites/Tower_Outline.png" id="4_rm1yc"]
 [ext_resource type="Texture2D" uid="uid://cc5rloc5lf1pw" path="res://Sprites/Tower_Crosshair_Outline.png" id="6_uk2cp"]
+[ext_resource type="Script" path="res://Scripts/CanvasLayer.gd" id="7_e1xrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fwq5"]
 size = Vector2(112, 112)
@@ -45,38 +46,42 @@ texture = ExtResource("6_uk2cp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HighligtArea"]
 shape = SubResource("RectangleShape2D_3fwq5")
 
-[node name="UI_elements" type="HBoxContainer" parent="."]
-unique_name_in_owner = true
-z_index = 2
-z_as_relative = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -54.0
-offset_top = 65.0
-offset_right = 54.0
-offset_bottom = 105.0
-grow_horizontal = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-mouse_force_pass_scroll_events = false
-alignment = 1
-
-[node name="Sell" type="Button" parent="UI_elements"]
-layout_mode = 2
-text = "Sell"
-
-[node name="Homing" type="Button" parent="UI_elements"]
-layout_mode = 2
-text = "Homing"
-
 [node name="ButtonArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonArea"]
 position = Vector2(0, 81.5)
 shape = SubResource("RectangleShape2D_sbyl1")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("7_e1xrl")
+
+[node name="UI_elements" type="HBoxContainer" parent="CanvasLayer"]
+z_index = 2
+z_as_relative = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 107.0
+offset_right = -468.0
+offset_bottom = 147.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+alignment = 1
+
+[node name="Sell" type="Button" parent="CanvasLayer/UI_elements"]
+layout_mode = 2
+text = "Sell"
+
+[node name="Homing" type="Button" parent="CanvasLayer/UI_elements"]
+layout_mode = 2
+text = "Homing"
+
 [connection signal="mouse_entered" from="HighligtArea" to="." method="_on_highligt_area_mouse_entered"]
 [connection signal="mouse_exited" from="HighligtArea" to="." method="_on_highligt_area_mouse_exited"]
 [connection signal="mouse_entered" from="ButtonArea" to="." method="_on_button_area_mouse_entered"]
 [connection signal="mouse_exited" from="ButtonArea" to="." method="_on_button_area_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/UI_elements/Sell" to="." method="_on_sell_mouse_entered"]

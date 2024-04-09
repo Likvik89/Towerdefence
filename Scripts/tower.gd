@@ -17,6 +17,10 @@ var bulletmodule_homing = false
 var bulletmodule_piercing = false
 var bulletmodule_blade = false
 
+func _ready():
+	
+	pass
+
 func shoot():
 	var prjctl = bullet.instantiate()
 	prjctl.position = global_position
@@ -64,11 +68,11 @@ func _process(delta):
 		if (Input.is_action_just_pressed("left_mouse") and not (hightlighted or button_hovered)) or Input.is_action_just_pressed("right_mouse"):
 			clicked = false
 		$AdvancedTargetingSystems/Crosshairs.visible = true
-		$UI_elements.visible = true
+		$CanvasLayer.visible = true
 	else:
 		$AdvancedTargetingSystems/Crosshairs.visible = false
 		if not button_hovered:
-			$UI_elements.visible = false
+			$CanvasLayer.visible = false
 
 #highlighting the tower
 func _on_highligt_area_mouse_entered():
@@ -83,3 +87,9 @@ func _on_button_area_mouse_entered():
 	print("button")
 func _on_button_area_mouse_exited():
 	button_hovered = false
+
+
+func _on_sell_mouse_entered():
+	print("sell")
+	pass # Replace with function body.
+

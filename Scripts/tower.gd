@@ -13,9 +13,13 @@ var cooldown = 0.1
 
 #modules
 var bulletmodule_spin = false
+const spin_cost = 50
 var bulletmodule_homing = false
+const homing_cost = 100
 var bulletmodule_piercing = false
+const peircing_cost = 100
 var bulletmodule_blade = false
+const blade_cost = 100
 
 func _ready():
 	
@@ -82,10 +86,23 @@ func _on_highligt_area_mouse_exited():
 
 #making buttons interactable
 var button_hovered = false
-
-func _on_sell_pressed():
-	print("sell")
 func _on_sell_mouse_entered():
 	button_hovered = true
 func _on_sell_mouse_exited():
 	button_hovered = false
+func _on_sell_pressed():
+	GlobalInfo.money += sellingprice
+	queue_free()
+ 
+
+
+func _on_homing_mouse_entered():
+	button_hovered = true
+func _on_homing_mouse_exited():
+	button_hovered = false
+func _on_homing_pressed():
+	if (GlobalInfo.money >= homing_cost) and not bulletmodule_homing:
+		bulletmodule_homing = true
+		$CanvasLayer/UI_elements/Homing.visible = false
+		GlobalInfo.money -= homing_cost
+

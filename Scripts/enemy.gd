@@ -3,10 +3,10 @@ extends RigidBody2D
 
 var waypoints = []
 var waypoint_reached = 0
-var speed = 500
+var speed = 300
 const bounty = 150
 
-#navigation
+
 const maxspeed = 500
 var health = 20
 var alive = true
@@ -14,9 +14,9 @@ const maxhealth = 10
 
 
 func _ready():
-	for waypoint in %waypoints.get_children():
-		if waypoint.is_in_group('waypoints'):
-			waypoints.append(waypoint)
+	#for waypoint in %waypoints.get_children():
+	#	if waypoint.is_in_group('waypoints'):
+	#		waypoints.append(waypoint)
 	var way = (waypoints[waypoint_reached].position-position).normalized()
 	apply_central_force(way*speed*3)
 

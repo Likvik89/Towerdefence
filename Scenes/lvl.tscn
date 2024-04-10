@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkdixyt4lra8b"]
 
 [ext_resource type="Texture2D" uid="uid://cw1f2toqlvlod" path="res://Sprites/Space Background Goosebump gold.png" id="1_s0a5k"]
-[ext_resource type="PackedScene" uid="uid://cwaiacpem5ekb" path="res://Scenes/enemy.tscn" id="2_pf22n"]
 [ext_resource type="PackedScene" uid="uid://dogb53f8aoxrx" path="res://Scenes/waypoint.tscn" id="3_mdg6f"]
 [ext_resource type="PackedScene" uid="uid://r3omelyt71hr" path="res://Scenes/tower.tscn" id="3_mve0n"]
+[ext_resource type="PackedScene" uid="uid://bd7go20j2x7ok" path="res://Scenes/enemy_spawner.tscn" id="4_6b1f2"]
 [ext_resource type="PackedScene" uid="uid://dg3vy51cgk71m" path="res://Scenes/camera.tscn" id="4_yq0uk"]
 
 [node name="lvl" type="Node2D"]
@@ -11,6 +11,8 @@
 [node name="SpaceBackgroundGoosebumpGold" type="Sprite2D" parent="."]
 scale = Vector2(2.3825, 2.3825)
 texture = ExtResource("1_s0a5k")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_6b1f2")]
 
 [node name="waypoints" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -31,14 +33,6 @@ position = Vector2(118, 73)
 
 [node name="Tower" parent="Towers" instance=ExtResource("3_mve0n")]
 position = Vector2(317, 161)
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Enemy" parent="Enemies" instance=ExtResource("2_pf22n")]
-position = Vector2(306, 1)
-
-[node name="Enemy2" parent="Enemies" instance=ExtResource("2_pf22n")]
-position = Vector2(249, -105)
 
 [node name="Camera" parent="." instance=ExtResource("4_yq0uk")]
 position = Vector2(320, 174)

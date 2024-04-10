@@ -47,7 +47,6 @@ shape = SubResource("RectangleShape2D_3fwq5")
 script = ExtResource("7_e1xrl")
 
 [node name="UI_elements" type="HBoxContainer" parent="CanvasLayer"]
-z_index = 2
 z_as_relative = false
 anchors_preset = 7
 anchor_left = 0.5

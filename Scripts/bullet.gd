@@ -4,7 +4,7 @@ extends RigidBody2D
 var _position
 var speed = 100
 var damage = 10
-var lifespan 
+var lifespan = 20 
 
 #modules
 var module_spin = false
@@ -56,6 +56,10 @@ func _process(delta):
 	if module_spin and angular_velocity <= rotationspeed:
 		angular_velocity += rotationspeed
 	
+	if lifespan <= 0:
+		queue_free()
+	else:
+		lifespan -= delta
 
 #bullet hit detection
 func _on_area_2d_body_entered(body):

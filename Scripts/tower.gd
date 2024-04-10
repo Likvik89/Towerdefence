@@ -21,9 +21,6 @@ const piercing_cost = 100
 var bulletmodule_blade = false
 const blade_cost = 100
 
-func _ready():
-	
-	pass
 
 func shoot():
 	var prjctl = bullet.instantiate()
@@ -59,7 +56,10 @@ func _process(delta):
 			GlobalInfo.money += cost
 			queue_free()
 		can_shoot = false
-	else: can_shoot = true
+		GlobalInfo.draggin_tower = true
+	else: 
+		can_shoot = true
+		GlobalInfo.draggin_tower = false
 	
 	if hightlighted:
 		$Outline.visible = true
@@ -73,6 +73,9 @@ func _process(delta):
 			clicked = false
 		$AdvancedTargetingSystems/Crosshairs.visible = true
 		$CanvasLayer.visible = true
+		if Input.is_action_just_pressed("sell_tower"):
+			GlobalInfo.money += sellingprice
+			queue_free()
 	else:
 		$AdvancedTargetingSystems/Crosshairs.visible = false
 		if not button_hovered:

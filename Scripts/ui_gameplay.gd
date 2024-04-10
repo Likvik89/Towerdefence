@@ -21,7 +21,7 @@ func _process(delta):
 func _on_tower_pressed():
 	var towr = tower.instantiate()
 	towr.dragging = true
-	if GlobalInfo.money >= towr.cost:
+	if GlobalInfo.money >= towr.cost and not GlobalInfo.draggin_tower:
 		get_tree().root.add_child(towr)
 		GlobalInfo.money -= towr.cost
 

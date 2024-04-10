@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkdixyt4lra8b"]
+[gd_scene load_steps=7 format=3 uid="uid://bkdixyt4lra8b"]
 
 [ext_resource type="Texture2D" uid="uid://cw1f2toqlvlod" path="res://Sprites/Space Background Goosebump gold.png" id="1_s0a5k"]
+[ext_resource type="Script" path="res://Scripts/lvl.gd" id="1_u7n17"]
 [ext_resource type="PackedScene" uid="uid://dogb53f8aoxrx" path="res://Scenes/waypoint.tscn" id="3_mdg6f"]
 [ext_resource type="PackedScene" uid="uid://r3omelyt71hr" path="res://Scenes/tower.tscn" id="3_mve0n"]
 [ext_resource type="PackedScene" uid="uid://bd7go20j2x7ok" path="res://Scenes/enemy_spawner.tscn" id="4_6b1f2"]
 [ext_resource type="PackedScene" uid="uid://dg3vy51cgk71m" path="res://Scenes/camera.tscn" id="4_yq0uk"]
 
 [node name="lvl" type="Node2D"]
+script = ExtResource("1_u7n17")
+tower = ExtResource("3_mve0n")
 
 [node name="SpaceBackgroundGoosebumpGold" type="Sprite2D" parent="."]
 scale = Vector2(2.3825, 2.3825)

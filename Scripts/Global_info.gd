@@ -5,7 +5,7 @@ var starting_health = 200
 var money = 70000
 var starting_money = 70000
 
-
+var draggin_tower = false
 
 var current_wave = 0
 var wave_completed = false

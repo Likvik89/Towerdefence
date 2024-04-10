@@ -1,7 +1,9 @@
 extends Node
 
-var health = 200
+var health = 10
+var starting_health = 200
 var money = 70000
+var starting_money = 70000
 
 
 

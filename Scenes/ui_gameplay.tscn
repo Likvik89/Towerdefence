@@ -30,4 +30,17 @@ layout_mode = 2
 layout_mode = 2
 text = "Tower"
 
+[node name="NextRound" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Next Round"
+
 [connection signal="pressed" from="HBoxContainer/Tower" to="." method="_on_tower_pressed"]
+[connection signal="pressed" from="NextRound" to="." method="_on_next_round_pressed"]

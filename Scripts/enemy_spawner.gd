@@ -2,17 +2,6 @@ extends Node2D
 var waypoints = []
 @export var slime : PackedScene
 var spawnrate = 0
-var current_wave = 0
-
-var wave1 = [
-	{"type" : "pause", "time" : 2},
-	{"type" : "enemy" , "kind" : "slime"},
-	{"type" : "pause", "time" : 4},
-	{"type" : "enemy" , "kind" : "slime"},
-	{"type" : "pause", "time" : 2},
-	{"type" : "enemy" , "kind" : "slime"}
-]
-var waves = [wave1]
 
 func _ready():
 	for waypoint in $"../waypoints".get_children():
@@ -29,14 +18,18 @@ func spawn(enmy):
 	
 
 func _process(delta):
-	var wave = waves[current_wave]
-	
-	if spawnrate <= 0:
-		var next = wave.pop_front()
-		if next.type == "pause":
-			spawnrate = next.time
-		
-		elif next.type == "enemy":
-			spawn(next.kind)
+	var wave = GlobalInfo.waves[GlobalInfo.current_wave]
+	if wave:
+		if spawnrate <= 0:
+			var next = wave.pop_front()
+			if next.type == "pause":
+				spawnrate = next.time
+			
+			elif next.type == "enemy":
+				spawn(next.kind)
+		else:
+			spawnrate -= delta
 	else:
-		spawnrate -= delta
+		GlobalInfo.wave_completed = true
+
+

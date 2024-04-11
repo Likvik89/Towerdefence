@@ -35,6 +35,7 @@ scale = Vector2(2.125, 2.125)
 texture = ExtResource("4_h5vch")
 
 [node name="CrosshairOutline" type="Sprite2D" parent="AdvancedTargetingSystems/Crosshairs"]
+unique_name_in_owner = true
 visible = false
 texture = ExtResource("6_uk2cp")
 

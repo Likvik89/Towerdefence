@@ -7,6 +7,7 @@ var can_shoot = true
 var hightlighted = false
 var clicked = false
 var aiming = false
+var last_aiming_spot
 
 @export var bullet : PackedScene
 var firingspeed = 3
@@ -70,7 +71,7 @@ func _process(delta):
 		$Outline.visible = false
 	
 	if clicked:
-		if (Input.is_action_just_pressed("left_mouse") and not (hightlighted or button_hovered)) or Input.is_action_just_pressed("right_mouse") :
+		if (Input.is_action_just_pressed("left_mouse") and not (hightlighted or button_hovered or aiming)) or (Input.is_action_just_pressed("right_mouse") and not aiming) :
 			clicked = false
 		$AdvancedTargetingSystems/Crosshairs.visible = true
 		$CanvasLayer.visible = true
@@ -83,6 +84,20 @@ func _process(delta):
 		if not button_hovered:
 			$CanvasLayer.visible = false
 	
+	if aiming:
+		$AdvancedTargetingSystems/Crosshairs/CrosshairOutline.visible = true
+		$AdvancedTargetingSystems.global_position = get_global_mouse_position()
+		
+		if Input.is_action_just_pressed("left_mouse"):
+			aiming = false
+		elif Input.is_action_pressed("right_mouse"):
+			$AdvancedTargetingSystems.global_position = last_aiming_spot
+			aiming = false
+	else:
+		$AdvancedTargetingSystems/Crosshairs/CrosshairOutline.visible = false
+	
+
+
 
 #highlighting the tower
 func _on_highligt_area_mouse_entered():
@@ -110,7 +125,6 @@ func _on_homing_pressed():
 		bulletmodule_homing = true
 		$CanvasLayer/UI_elements/Homing.visible = false
 		GlobalInfo.money -= homing_cost
-
 
 
 func _on_spin_mouse_entered():
@@ -152,5 +166,6 @@ func _on_aim_mouse_entered():
 func _on_aim_mouse_exited():
 	button_hovered = false
 func _on_aim_pressed():
+	last_aiming_spot = $AdvancedTargetingSystems.global_position
 	aiming = true
 

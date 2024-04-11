@@ -91,10 +91,12 @@ func _process(delta):
 	
 	if aiming:
 		$AdvancedTargetingSystems/Crosshairs/CrosshairOutline.visible = true
-		$AdvancedTargetingSystems.global_position = get_global_mouse_position()
+		next_aiming_spot = get_global_mouse_position()
+		$AdvancedTargetingSystems/Crosshairs.global_position = get_global_mouse_position()
 		
 		if Input.is_action_just_pressed("left_mouse"):
 			aiming = false
+			$AdvancedTargetingSystems.global_position = next_aiming_spot
 		elif Input.is_action_pressed("right_mouse"):
 			$AdvancedTargetingSystems.global_position = last_aiming_spot
 			aiming = false

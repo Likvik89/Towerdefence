@@ -8,6 +8,7 @@ var hightlighted = false
 var clicked = false
 var aiming = false
 var last_aiming_spot
+var next_aiming_spot
 
 @export var bullet : PackedScene
 var firingspeed = 3
@@ -78,6 +79,10 @@ func _process(delta):
 		if Input.is_action_just_pressed("sell_tower"):
 			GlobalInfo.money += sellingprice
 			queue_free()
+		if Input.is_action_just_pressed("aim_tower") and not aiming:
+			last_aiming_spot = $AdvancedTargetingSystems.global_position
+			aiming = true
+		
 	else:
 		
 		$AdvancedTargetingSystems/Crosshairs.visible = false
@@ -160,12 +165,12 @@ func _on_pierce_pressed():
 		GlobalInfo.money -= piercing_cost
 
 
-
 func _on_aim_mouse_entered():
 	button_hovered = true
 func _on_aim_mouse_exited():
 	button_hovered = false
 func _on_aim_pressed():
-	last_aiming_spot = $AdvancedTargetingSystems.global_position
-	aiming = true
+	if not aiming:
+		last_aiming_spot = $AdvancedTargetingSystems.global_position
+		aiming = true
 

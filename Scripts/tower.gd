@@ -6,6 +6,7 @@ var dragging = false
 var can_shoot = true
 var hightlighted = false
 var clicked = false
+var aiming = false
 
 @export var bullet : PackedScene
 var firingspeed = 3
@@ -69,7 +70,7 @@ func _process(delta):
 		$Outline.visible = false
 	
 	if clicked:
-		if (Input.is_action_just_pressed("left_mouse") and not hightlighted) or Input.is_action_just_pressed("right_mouse"):
+		if (Input.is_action_just_pressed("left_mouse") and not (hightlighted or button_hovered)) or Input.is_action_just_pressed("right_mouse") :
 			clicked = false
 		$AdvancedTargetingSystems/Crosshairs.visible = true
 		$CanvasLayer.visible = true
@@ -77,9 +78,11 @@ func _process(delta):
 			GlobalInfo.money += sellingprice
 			queue_free()
 	else:
+		
 		$AdvancedTargetingSystems/Crosshairs.visible = false
 		if not button_hovered:
 			$CanvasLayer.visible = false
+	
 
 #highlighting the tower
 func _on_highligt_area_mouse_entered():
@@ -141,4 +144,13 @@ func _on_pierce_pressed():
 		bulletmodule_piercing = true
 		$CanvasLayer/UI_elements/Pierce.visible = false
 		GlobalInfo.money -= piercing_cost
+
+
+
+func _on_aim_mouse_entered():
+	button_hovered = true
+func _on_aim_mouse_exited():
+	button_hovered = false
+func _on_aim_pressed():
+	aiming = true
 

@@ -26,9 +26,16 @@ const blade_cost = 100
 
 
 func shoot():
+	
+	
 	var prjctl = bullet.instantiate()
 	prjctl.position = global_position
-	prjctl._position = $AdvancedTargetingSystems.global_position
+	
+	if aiming:
+		prjctl._position = last_aiming_spot
+		pass
+	else:
+		prjctl._position = $AdvancedTargetingSystems.global_position
 	
 	if bulletmodule_spin:
 		prjctl.module_spin = true
@@ -82,7 +89,6 @@ func _process(delta):
 		if Input.is_action_just_pressed("aim_tower") and not aiming:
 			last_aiming_spot = $AdvancedTargetingSystems.global_position
 			aiming = true
-		
 	else:
 		
 		$AdvancedTargetingSystems/Crosshairs.visible = false

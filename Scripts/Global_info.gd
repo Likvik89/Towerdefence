@@ -5,6 +5,8 @@ var starting_health = 200
 var money = 70000
 var starting_money = 70000
 
+var win = false
+
 var draggin_tower = false
 
 var current_wave = 0
@@ -39,3 +41,7 @@ func _process(delta):
 		wave_completed = true
 	else:
 		wave_completed = false
+	
+	if (current_wave >= waves.size()-1) and wave_completed:
+		print("win")
+		win = true

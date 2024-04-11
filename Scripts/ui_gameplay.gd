@@ -7,7 +7,7 @@ func _process(delta):
 	$HBoxContainer/Life.text = str(GlobalInfo.health)
 	$HBoxContainer/Money.text = str(GlobalInfo.money)
 	$HBoxContainer/Wave.text = str(GlobalInfo.current_wave)
-	if GlobalInfo.wave_completed:
+	if GlobalInfo.wave_completed and not GlobalInfo.win:
 		$NextRound.visible = true
 	else:
 		$NextRound.visible = false
@@ -16,6 +16,9 @@ func _process(delta):
 		$HBoxContainer.visible = false
 		$NextRound.visible = false
 		$GameOver.visible = true
+	
+	if GlobalInfo.win:
+		$Win.visible = true
 
 
 func _on_tower_pressed():

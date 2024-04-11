@@ -31,7 +31,6 @@ func _ready():
 	
 	var direction = (_position-position).normalized()
 	rotation = Vector2.RIGHT.angle_to(direction)+PI/2
-	print(rotation)
 	linear_velocity = direction*speed
 
 #homing

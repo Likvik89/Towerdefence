@@ -33,7 +33,6 @@ func shoot():
 	
 	if aiming:
 		prjctl._position = last_aiming_spot
-		pass
 	else:
 		prjctl._position = $AdvancedTargetingSystems.global_position
 	

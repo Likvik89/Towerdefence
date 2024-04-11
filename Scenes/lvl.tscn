@@ -32,10 +32,8 @@ position = Vector2(243, 359)
 [node name="Waypoint4" parent="waypoints" instance=ExtResource("3_mdg6f")]
 position = Vector2(118, 73)
 
-[node name="Towers" type="Node2D" parent="."]
-
-[node name="Tower" parent="Towers" instance=ExtResource("3_mve0n")]
-position = Vector2(317, 161)
-
 [node name="Camera" parent="." instance=ExtResource("4_yq0uk")]
 position = Vector2(320, 174)
+
+[node name="Tower" parent="." instance=ExtResource("3_mve0n")]
+position = Vector2(317, 161)

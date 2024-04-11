@@ -7,5 +7,5 @@ func _process(delta):
 		var towr = tower.instantiate()
 		towr.dragging = true
 		if GlobalInfo.money >= towr.cost:
-			get_tree().root.add_child(towr)
+			add_child(towr)
 			GlobalInfo.money -= towr.cost

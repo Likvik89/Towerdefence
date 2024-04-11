@@ -19,17 +19,17 @@ func spawn(enmy):
 
 func _process(delta):
 	var wave = GlobalInfo.waves[GlobalInfo.current_wave]
-	if wave:
+	if wave and not GlobalInfo.wave_completed:
 		if spawnrate <= 0:
 			var next = wave.pop_front()
 			if next.type == "pause":
 				spawnrate = next.time
-			
+				
 			elif next.type == "enemy":
 				spawn(next.kind)
 		else:
 			spawnrate -= delta
 	else:
-		GlobalInfo.wave_completed = true
+		GlobalInfo.wave_ongoing = false
 
 

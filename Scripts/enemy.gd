@@ -14,9 +14,7 @@ const maxhealth = 10
 
 
 func _ready():
-	#for waypoint in %waypoints.get_children():
-	#	if waypoint.is_in_group('waypoints'):
-	#		waypoints.append(waypoint)
+	GlobalInfo.enemies_left += 1
 	var way = (waypoints[waypoint_reached].position-position).normalized()
 	apply_central_force(way*speed*3)
 
@@ -34,6 +32,7 @@ func _process(delta):
 	if health <= 0:
 		alive = false
 		GlobalInfo.money += bounty
+		GlobalInfo.enemies_left -= 1
 		queue_free()
 	
 
@@ -42,6 +41,7 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group('waypoints'):
 		if waypoint_reached == waypoints.size()-1:
 			GlobalInfo.health -= health
+			GlobalInfo.enemies_left -= 1
 			queue_free()
 		else:
 			waypoint_reached += 1

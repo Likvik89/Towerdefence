@@ -6,7 +6,7 @@ extends Control
 func _process(delta):
 	$HBoxContainer/Life.text = str(GlobalInfo.health)
 	$HBoxContainer/Money.text = str(GlobalInfo.money)
-	$HBoxContainer/Wave.text = str(GlobalInfo.current_wave+1)
+	$HBoxContainer/Wave.text = str(GlobalInfo.current_wave)
 	if GlobalInfo.wave_completed:
 		$NextRound.visible = true
 	else:
@@ -27,6 +27,7 @@ func _on_tower_pressed():
 
 func _on_next_round_pressed():
 	GlobalInfo.wave_completed = false
+	GlobalInfo.wave_ongoing = true
 	GlobalInfo.current_wave += 1
 
 
@@ -34,6 +35,8 @@ func _on_retry_pressed():
 	GlobalInfo.health = GlobalInfo.starting_health
 	GlobalInfo.money = GlobalInfo.starting_money
 	GlobalInfo.current_wave = 0
+	GlobalInfo.wave_ongoing = false
+	GlobalInfo.enemies_left = 0
 	get_tree().change_scene_to_file("res://Scenes/lvl.tscn")
 
 

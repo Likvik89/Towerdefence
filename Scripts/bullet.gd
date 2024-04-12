@@ -22,6 +22,10 @@ var module_blade = false
 var blade_damage = 10
 @export var bullet_blade : PackedScene
 
+var module_seeking = false
+var seeking_speed = 3
+
+
 
 func _ready():
 	if module_blade:

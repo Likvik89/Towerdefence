@@ -2,6 +2,7 @@ extends Node2D
 
 const cost = 300
 var sellingprice = cost*0.75
+const sellprocent = 0.75
 var dragging = false
 var can_shoot = true
 var hightlighted = false
@@ -24,7 +25,8 @@ var bulletmodule_piercing = false
 const piercing_cost = 100
 var bulletmodule_blade = false
 const blade_cost = 100
-
+var bulletmodule_seeking = false
+const seeking_cost = 100
 
 func shoot():
 	
@@ -45,6 +47,8 @@ func shoot():
 		prjctl.module_piercing = true
 	if bulletmodule_blade:
 		prjctl.module_blade = true
+	if bulletmodule_seeking:
+		prjctl.module_seeking = true
 	
 	get_tree().root.add_child(prjctl)
 
@@ -138,6 +142,7 @@ func _on_homing_pressed():
 	if (GlobalInfo.money >= homing_cost) and not bulletmodule_homing:
 		bulletmodule_homing = true
 		$CanvasLayer/UI_elements/Homing.visible = false
+		sellingprice += homing_cost*sellprocent
 		GlobalInfo.money -= homing_cost
 
 
@@ -149,6 +154,7 @@ func _on_spin_pressed():
 	if (GlobalInfo.money >= spin_cost) and not bulletmodule_spin:
 		bulletmodule_spin = true
 		$CanvasLayer/UI_elements/Spin.visible = false
+		sellingprice += spin_cost*sellprocent
 		GlobalInfo.money -= spin_cost
 
 
@@ -160,6 +166,7 @@ func _on_blade_pressed():
 	if (GlobalInfo.money >= blade_cost) and not bulletmodule_blade:
 		bulletmodule_blade = true
 		$CanvasLayer/UI_elements/Blade.visible = false
+		sellingprice += blade_cost*sellprocent
 		GlobalInfo.money -= blade_cost
 
 
@@ -171,6 +178,7 @@ func _on_pierce_pressed():
 	if (GlobalInfo.money >= piercing_cost) and not bulletmodule_piercing:
 		bulletmodule_piercing = true
 		$CanvasLayer/UI_elements/Pierce.visible = false
+		sellingprice += piercing_cost*sellprocent
 		GlobalInfo.money -= piercing_cost
 
 
@@ -183,3 +191,15 @@ func _on_aim_pressed():
 		last_aiming_spot = $AdvancedTargetingSystems.global_position
 		aiming = true
 
+
+
+func _on_seeking_mouse_entered():
+	button_hovered = true
+func _on_seeking_mouse_exited():
+	button_hovered = false
+func _on_seeking_pressed():
+	if (GlobalInfo.money >= seeking_cost) and not bulletmodule_seeking:
+		bulletmodule_seeking = true
+		$CanvasLayer/UI_elements/Seeking.visible = false
+		sellingprice += seeking_cost+sellprocent
+		GlobalInfo.money -= seeking_cost

@@ -24,7 +24,7 @@ var blade_damage = 10
 
 var module_seeking = false
 var seeking_speed = 4
-
+const max_seeking_speed = 300
 
 
 func _ready():
@@ -60,7 +60,11 @@ func _physics_process(delta):
 	#seeking
 	if module_seeking:
 		var direction = (get_global_mouse_position()-global_position).normalized()
-		linear_velocity += direction*seeking_speed
+		
+		if linear_velocity.length() <= max_seeking_speed:
+			
+			linear_velocity += direction*seeking_speed
+		
 
 #Spinning
 func _process(delta):

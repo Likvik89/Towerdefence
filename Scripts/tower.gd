@@ -9,6 +9,7 @@ var clicked = false
 var aiming = false
 var last_aiming_spot
 var next_aiming_spot
+var just_placed = false
 
 @export var bullet : PackedScene
 var firingspeed = 3
@@ -60,6 +61,7 @@ func _process(delta):
 		if mouse_motion:
 			global_position = get_global_mouse_position()
 		if Input.is_action_just_pressed("left_mouse"):
+			just_placed = true
 			dragging = false
 		if Input.is_action_just_pressed("right_mouse"):
 			GlobalInfo.money += cost
@@ -79,13 +81,15 @@ func _process(delta):
 	
 	if clicked:
 		if (Input.is_action_just_pressed("left_mouse") and not (hightlighted or button_hovered or aiming)) or (Input.is_action_just_pressed("right_mouse") and not aiming) :
+			if just_placed:
+				just_placed = false
 			clicked = false
 		$AdvancedTargetingSystems/Crosshairs.visible = true
 		$CanvasLayer.visible = true
 		if Input.is_action_just_pressed("sell_tower"):
 			GlobalInfo.money += sellingprice
 			queue_free()
-		if Input.is_action_just_pressed("aim_tower") and not aiming:
+		if Input.is_action_just_pressed("aim_tower") and (GlobalInfo.wave_completed or just_placed) and not aiming:
 			last_aiming_spot = $AdvancedTargetingSystems.global_position
 			aiming = true
 	else:
@@ -175,7 +179,7 @@ func _on_aim_mouse_entered():
 func _on_aim_mouse_exited():
 	button_hovered = false
 func _on_aim_pressed():
-	if not aiming:
+	if not aiming and (GlobalInfo.wave_completed or just_placed):
 		last_aiming_spot = $AdvancedTargetingSystems.global_position
 		aiming = true
 

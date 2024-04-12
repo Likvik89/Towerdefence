@@ -39,6 +39,7 @@ func _on_retry_pressed():
 	GlobalInfo.money = GlobalInfo.starting_money
 	GlobalInfo.current_wave = 0
 	GlobalInfo.wave_ongoing = false
+	GlobalInfo.win = false
 	GlobalInfo.enemies_left = 0
 	get_tree().change_scene_to_file("res://Scenes/lvl.tscn")
 

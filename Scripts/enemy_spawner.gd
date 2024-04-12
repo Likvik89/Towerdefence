@@ -14,9 +14,8 @@ func spawn(enmy):
 		enemy = slime.instantiate()
 	enemy.waypoints = waypoints
 	enemy.global_position = $SpawnPoint.global_position
-	add_child(enemy)
+	get_parent().add_child(enemy)
 	
-
 func _process(delta):
 	var wave = GlobalInfo.waves[GlobalInfo.current_wave]
 	if wave and not GlobalInfo.wave_completed:

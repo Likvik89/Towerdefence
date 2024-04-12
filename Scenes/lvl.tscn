@@ -17,7 +17,7 @@ scale = Vector2(2.3825, 2.3825)
 texture = ExtResource("3_00bfo")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_6b1f2")]
-position = Vector2(118, 286)
+position = Vector2(127, 272)
 
 [node name="waypoints" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -39,3 +39,5 @@ position = Vector2(338, 202)
 
 [node name="Tower" parent="." instance=ExtResource("3_mve0n")]
 position = Vector2(317, 358)
+
+[node name="EnemyContainer" type="Node2D" parent="." groups=["EnemyContainer"]]

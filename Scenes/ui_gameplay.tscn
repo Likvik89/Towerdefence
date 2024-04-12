@@ -37,7 +37,7 @@ anchor_right = 1.0
 offset_left = -100.0
 offset_bottom = 31.0
 grow_horizontal = 0
-text = "Next Round"
+text = "Next Wave"
 
 [node name="GameOver" type="Control" parent="."]
 unique_name_in_owner = true

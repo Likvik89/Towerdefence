@@ -4,9 +4,9 @@ extends CanvasLayer
 
 
 func _process(delta):
-	$HBoxContainer/Life.text = str(GlobalInfo.health)
-	$HBoxContainer/Money.text = str(GlobalInfo.money)
-	$HBoxContainer/Wave.text = str(GlobalInfo.current_wave)
+	$HBoxContainer/Life.text = str("Health = ",GlobalInfo.health)
+	$HBoxContainer/Money.text = str("Money = ",GlobalInfo.money)
+	$HBoxContainer/Wave.text = str("Wave = ",GlobalInfo.current_wave)
 	if GlobalInfo.wave_completed and not GlobalInfo.win:
 		$NextRound.visible = true
 	else:
@@ -25,7 +25,7 @@ func _on_tower_pressed():
 	var towr = tower.instantiate()
 	towr.dragging = true
 	if GlobalInfo.money >= towr.cost and not GlobalInfo.draggin_tower:
-		get_tree().root.add_child(towr)
+		get_parent().get_parent().add_child(towr)
 		GlobalInfo.money -= towr.cost
 
 func _on_next_round_pressed():

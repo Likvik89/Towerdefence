@@ -17,6 +17,7 @@ scale = Vector2(2.3825, 2.3825)
 texture = ExtResource("3_l3h44")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("4_6b1f2")]
+visible = false
 position = Vector2(127, 272)
 
 [node name="waypoints" type="Node2D" parent="."]

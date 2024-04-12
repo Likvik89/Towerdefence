@@ -8,10 +8,16 @@ gravity_scale = 0.0
 script = ExtResource("1_7mquw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="Ui_gameplay" parent="." instance=ExtResource("2_3dbqj")]
-offset_left = -576.0
-offset_top = -322.0
-offset_right = 574.0
-offset_bottom = 322.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -161.0
+offset_right = 287.5
+offset_bottom = 161.0
 mouse_filter = 1

@@ -12,6 +12,7 @@
 size = Vector2(112, 112)
 
 [node name="Tower" type="Node2D" groups=["towers"]]
+scale = Vector2(0.51, 0.51)
 script = ExtResource("1_fe4is")
 bullet = ExtResource("2_0nfj5")
 

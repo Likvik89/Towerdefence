@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd7go20j2x7ok"]
+[gd_scene load_steps=4 format=3 uid="uid://bd7go20j2x7ok"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="1_8ul3d"]
 [ext_resource type="PackedScene" uid="uid://cwaiacpem5ekb" path="res://Scenes/enemy.tscn" id="2_ohh1w"]
+[ext_resource type="Texture2D" uid="uid://cgmribhewb4hq" path="res://Sprites/EnemySpawner.png" id="3_p0nui"]
 
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource("1_8ul3d")
@@ -9,3 +10,6 @@ slime = ExtResource("2_ohh1w")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_p0nui")

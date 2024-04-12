@@ -107,6 +107,7 @@ func _process(delta):
 		$AdvancedTargetingSystems.global_position = get_global_mouse_position()
 		
 		if Input.is_action_just_pressed("left_mouse"):
+			just_placed = false
 			aiming = false
 		elif Input.is_action_pressed("right_mouse"):
 			$AdvancedTargetingSystems.global_position = last_aiming_spot

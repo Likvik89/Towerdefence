@@ -4,7 +4,7 @@ extends RigidBody2D
 var _position
 var speed = 100
 var damage = 10
-var lifespan = 20 
+var lifespan = 10
 
 #modules
 var module_spin = false
@@ -23,7 +23,7 @@ var blade_damage = 10
 @export var bullet_blade : PackedScene
 
 var module_seeking = false
-var seeking_speed = 3
+var seeking_speed = 4
 
 
 
@@ -35,7 +35,11 @@ func _ready():
 	
 	var direction = (_position-position).normalized()
 	rotation = Vector2.RIGHT.angle_to(direction)+PI/2
-	linear_velocity = direction*speed
+	
+	if module_seeking:
+		linear_velocity = direction*speed/2
+	else:
+		linear_velocity = direction*speed
 
 #homing
 func _physics_process(delta):
@@ -52,8 +56,11 @@ func _physics_process(delta):
 			var direction = (closest_homing_target.global_position-global_position).normalized()
 		
 			linear_velocity += direction*homing_speed
-		pass
-
+	
+	#seeking
+	if module_seeking:
+		var direction = (get_global_mouse_position()-global_position).normalized()
+		linear_velocity += direction*seeking_speed
 
 #Spinning
 func _process(delta):

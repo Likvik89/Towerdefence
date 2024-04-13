@@ -10,9 +10,11 @@ var win = false
 var draggin_tower = false
 
 var current_wave = 0
+var waveindex = 0
 var wave_completed = false
 var enemies_left = 0
 var wave_ongoing = false
+
 
 var wave0 = [
 	{"type" : "pause", "time" : 1}
@@ -43,5 +45,5 @@ func _process(delta):
 		wave_completed = false
 	
 	if (current_wave >= waves.size()-1) and wave_completed:
-		print("win")
 		win = true
+	

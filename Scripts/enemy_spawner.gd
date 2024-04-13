@@ -15,20 +15,27 @@ func spawn(enmy):
 	enemy.waypoints = waypoints
 	enemy.global_position = $SpawnPoint.global_position
 	get_parent().add_child(enemy)
-	
+
+
 func _process(delta):
 	var wave = GlobalInfo.waves[GlobalInfo.current_wave]
-	if wave and not GlobalInfo.wave_completed:
+
+	if not GlobalInfo.wave_completed:
 		if spawnrate <= 0:
-			var next = wave.pop_front()
-			if next.type == "pause":
-				spawnrate = next.time
+			if GlobalInfo.waveindex < wave.size():
+				var next = wave[GlobalInfo.waveindex]
+				print(next)
+				if next.type == "pause":
+					spawnrate = next.time
+					
+				elif next.type == "enemy":
+					spawn(next.kind)
 				
-			elif next.type == "enemy":
-				spawn(next.kind)
+				GlobalInfo.waveindex += 1
+			else:
+				GlobalInfo.wave_ongoing = false
 		else:
 			spawnrate -= delta
-	else:
-		GlobalInfo.wave_ongoing = false
+	
 
 

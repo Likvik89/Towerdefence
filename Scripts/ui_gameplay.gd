@@ -29,12 +29,14 @@ func _on_tower_pressed():
 		GlobalInfo.money -= towr.cost
 
 func _on_next_round_pressed():
+	GlobalInfo.waveindex = 0
 	GlobalInfo.wave_completed = false
 	GlobalInfo.wave_ongoing = true
 	GlobalInfo.current_wave += 1
 
 
 func _on_retry_pressed():
+	GlobalInfo.waveindex = 0
 	GlobalInfo.health = GlobalInfo.starting_health
 	GlobalInfo.money = GlobalInfo.starting_money
 	GlobalInfo.current_wave = 0

@@ -9,7 +9,7 @@ const bounty = 150
 
 
 const maxspeed = 500
-var health = 20
+var health = 40
 var alive = true
 const maxhealth = 10
 
@@ -67,7 +67,7 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group('waypoints'):
 		if waypoint_reached == waypoints.size()-1:
 			GlobalInfo.health -= health
-			GlobalInfo.enemies_left -= 1
+			GlobalInfo.enemies_left.erase(self)
 			queue_free()
 		else:
 			waypoint_reached += 1

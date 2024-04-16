@@ -1,8 +1,8 @@
 extends Node
 
-var health = 10
+var health = 100
 var starting_health = 200
-var money = 70000
+var money = 1000
 var starting_money = 70000
 
 var win = false

@@ -32,13 +32,17 @@ func take_damage(damage):
 func die():
 	alive = false
 	var slm = slime.instantiate()
+	slm.waypoint_reached = waypoint_reached
 	slm.speed = speed/2
 	slm.bounty = bounty/2
 	slm.maxspeed = maxspeed/2
 	slm.health = health/2
 	slm.maxhealth = maxhealth/2
+	slm.global_position = global_position
 	
 	var slm2 = slime.instantiate()
+	slm2.global_position = global_position
+	slm2.waypoint_reached = waypoint_reached
 	slm2.speed = speed/2
 	slm2.bounty = bounty/2
 	slm2.maxspeed = maxspeed/2

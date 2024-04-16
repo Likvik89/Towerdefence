@@ -24,7 +24,7 @@ func _process(delta):
 		if spawnrate <= 0:
 			if GlobalInfo.waveindex < wave.size():
 				var next = wave[GlobalInfo.waveindex]
-				print(next)
+				#print(next)
 				if next.type == "pause":
 					spawnrate = next.time
 					

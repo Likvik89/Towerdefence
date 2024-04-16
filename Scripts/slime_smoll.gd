@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 var waypoints = []
-var waypoint_reached = 0
+var waypoint_reached
 var speed
 var bounty
 var maxspeed

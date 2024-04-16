@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/CanvasLayer.gd" id="7_e1xrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fwq5"]
-size = Vector2(40, 40)
+size = Vector2(42, 42)
 
 [node name="Tower" type="Node2D" groups=["towers"]]
 script = ExtResource("1_fe4is")
@@ -21,7 +21,6 @@ texture = ExtResource("1_n3ond")
 
 [node name="Outline" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-visible = false
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_rm1yc")
 
@@ -31,7 +30,7 @@ position = Vector2(41, -86)
 [node name="Crosshairs" type="Sprite2D" parent="AdvancedTargetingSystems"]
 unique_name_in_owner = true
 visible = false
-scale = Vector2(2, 2)
+scale = Vector2(2.125, 2.125)
 texture = ExtResource("4_h5vch")
 
 [node name="CrosshairOutline" type="Sprite2D" parent="AdvancedTargetingSystems/Crosshairs"]

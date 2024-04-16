@@ -61,23 +61,22 @@ offset_right = 50.0
 offset_bottom = 66.0
 
 [node name="Retry" type="Button" parent="GameOver/VBoxContainer"]
-light_mask = 4
-visibility_layer = 4
-z_index = 2
+light_mask = 7
+visibility_layer = 7
+z_as_relative = false
 layout_mode = 2
 text = "Retry"
 
 [node name="Quit" type="Button" parent="GameOver/VBoxContainer"]
 light_mask = 4
 visibility_layer = 4
-z_index = 2
+z_as_relative = false
 layout_mode = 2
 text = "Quit"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="GameOver"]
-show_behind_parent = true
-light_mask = 2
-visibility_layer = 2
+light_mask = 3
+visibility_layer = 3
 color = Color(0.384314, 0.384314, 0.384314, 1)
 
 [node name="Win" type="CanvasLayer" parent="."]

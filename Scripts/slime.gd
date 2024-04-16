@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@export var slime : PackedScene
 
 var waypoints = []
 var waypoint_reached = 0
@@ -14,7 +15,7 @@ const maxhealth = 10
 
 
 func _ready():
-	GlobalInfo.enemies_left += 1
+	GlobalInfo.enemies_left.append(self)
 	var way = (waypoints[waypoint_reached].position-position).normalized()
 	apply_central_force(way*speed*3)
 
@@ -27,13 +28,17 @@ func _integrate_forces(state):
 func take_damage(damage):
 	health -= damage
 
+func die():
+	alive = false
+	GlobalInfo.money += bounty
+	
+	GlobalInfo.enemies_left.erase(self)
+	queue_free()
 
 func _process(delta):
 	if health <= 0:
-		alive = false
-		GlobalInfo.money += bounty
-		GlobalInfo.enemies_left -= 1
-		queue_free()
+		die()
+		
 	
 
 

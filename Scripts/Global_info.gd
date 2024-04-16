@@ -12,7 +12,7 @@ var draggin_tower = false
 var current_wave = 0
 var waveindex = 0
 var wave_completed = false
-var enemies_left = 0
+var enemies_left = []
 var wave_ongoing = false
 
 
@@ -37,9 +37,9 @@ var wave2 =[
 ]
 
 var waves = [wave0, wave1, wave2]
- 
+
 func _process(delta):
-	if enemies_left == 0 and not wave_ongoing:
+	if not enemies_left and not wave_ongoing:
 		wave_completed = true
 	else:
 		wave_completed = false

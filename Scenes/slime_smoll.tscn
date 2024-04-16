@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://r7pp83iheu3v"]
+
+[ext_resource type="Script" path="res://Scripts/slime_smoll.gd" id="1_stjn0"]
+[ext_resource type="Texture2D" uid="uid://hvcaohhxsvmx" path="res://Sprites/Slime.png" id="2_fwwpu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hg0ao"]
+radius = 12.0416
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e7t32"]
+height = 28.0
+
+[node name="slime_smoll" type="RigidBody2D"]
+script = ExtResource("1_stjn0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_fwwpu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hg0ao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e7t32")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

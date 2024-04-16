@@ -42,7 +42,7 @@ func _on_retry_pressed():
 	GlobalInfo.current_wave = 0
 	GlobalInfo.wave_ongoing = false
 	GlobalInfo.win = false
-	GlobalInfo.enemies_left = 0
+	GlobalInfo.enemies_left = []
 	get_tree().change_scene_to_file("res://Scenes/lvl.tscn")
 
 

@@ -15,6 +15,7 @@ const maxhealth = 10
 
 
 func _ready():
+	waypoints = GlobalInfo.waypoints
 	GlobalInfo.enemies_left.append(self)
 	var way = (waypoints[waypoint_reached].position-position).normalized()
 	apply_central_force(way*speed*3)
@@ -30,8 +31,24 @@ func take_damage(damage):
 
 func die():
 	alive = false
-	GlobalInfo.money += bounty
+	var slm = slime.instantiate()
+	slm.speed = speed/2
+	slm.bounty = bounty/2
+	slm.maxspeed = maxspeed/2
+	slm.health = health/2
+	slm.maxhealth = maxhealth/2
 	
+	var slm2 = slime.instantiate()
+	slm2.speed = speed/2
+	slm2.bounty = bounty/2
+	slm2.maxspeed = maxspeed/2
+	slm2.health = health/2
+	slm2.maxhealth = maxhealth/2
+	
+	get_parent().add_child(slm)
+	get_parent().add_child(slm2)
+	
+	GlobalInfo.money += bounty
 	GlobalInfo.enemies_left.erase(self)
 	queue_free()
 

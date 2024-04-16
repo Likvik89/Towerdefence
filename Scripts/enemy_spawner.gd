@@ -12,7 +12,7 @@ func spawn(enmy):
 	var enemy
 	if enmy == "slime":
 		enemy = slime.instantiate()
-	enemy.waypoints = waypoints
+	
 	enemy.global_position = $SpawnPoint.global_position
 	get_parent().add_child(enemy)
 

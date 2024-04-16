@@ -15,6 +15,7 @@ var wave_completed = false
 var enemies_left = []
 var wave_ongoing = false
 
+var waypoints = []
 
 var wave0 = [
 	{"type" : "pause", "time" : 1}

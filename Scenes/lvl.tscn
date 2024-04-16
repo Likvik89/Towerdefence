@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkdixyt4lra8b"]
+[gd_scene load_steps=8 format=3 uid="uid://bkdixyt4lra8b"]
 
 [ext_resource type="Script" path="res://Scripts/lvl.gd" id="1_u7n17"]
 [ext_resource type="Texture2D" uid="uid://clw452bmrbmjs" path="res://Sprites/Ultimate_background_FINAL.png" id="3_l3h44"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://r3omelyt71hr" path="res://Scenes/tower.tscn" id="3_mve0n"]
 [ext_resource type="PackedScene" uid="uid://bd7go20j2x7ok" path="res://Scenes/enemy_spawner.tscn" id="4_6b1f2"]
 [ext_resource type="PackedScene" uid="uid://dg3vy51cgk71m" path="res://Scenes/camera.tscn" id="4_yq0uk"]
+[ext_resource type="Script" path="res://Scripts/waypoints.gd" id="5_1a1wj"]
 
 [node name="lvl" type="Node2D"]
 script = ExtResource("1_u7n17")
@@ -22,6 +23,7 @@ position = Vector2(127, 272)
 
 [node name="waypoints" type="Node2D" parent="."]
 unique_name_in_owner = true
+script = ExtResource("5_1a1wj")
 
 [node name="Waypoint" parent="waypoints" instance=ExtResource("3_mdg6f")]
 position = Vector2(127, 506)

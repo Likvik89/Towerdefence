@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 var waypoints = []
-var waypoint_reached
+var waypoint_reached = 0
 var speed
 var bounty
 var maxspeed
@@ -12,7 +12,8 @@ var maxhealth
 
 
 func _ready():
-	GlobalInfo.enemies_left += 1
+	waypoints = GlobalInfo.waypoints
+	GlobalInfo.enemies_left.append(self)
 	var way = (waypoints[waypoint_reached].position-position).normalized()
 	apply_central_force(way*speed*3)
 
@@ -30,7 +31,7 @@ func _process(delta):
 	if health <= 0:
 		alive = false
 		GlobalInfo.money += bounty
-		GlobalInfo.enemies_left -= 1
+		GlobalInfo.enemies_left.erase(self)
 		queue_free()
 	
 

@@ -25,7 +25,7 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_rm1yc")
 
 [node name="AdvancedTargetingSystems" type="Marker2D" parent="."]
-position = Vector2(41, -86)
+position = Vector2(0, -86)
 
 [node name="Crosshairs" type="Sprite2D" parent="AdvancedTargetingSystems"]
 unique_name_in_owner = true

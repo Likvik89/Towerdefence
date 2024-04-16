@@ -4,7 +4,7 @@ extends Node2D
 
 
 func _process(delta):
-	if Input.is_action_pressed("purchase_tower") and not GlobalInfo.draggin_tower:
+	if Input.is_action_just_pressed("purchase_tower") and not GlobalInfo.draggin_tower:
 		var towr = tower.instantiate()
 		towr.dragging = true
 		if GlobalInfo.money >= towr.cost:

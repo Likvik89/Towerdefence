@@ -4,7 +4,7 @@ extends RigidBody2D
 
 var waypoints = []
 var waypoint_reached = 0
-var speed = 300
+var speed = 500
 const bounty = 150
 
 

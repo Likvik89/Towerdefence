@@ -23,11 +23,11 @@ var wave0 = [
 
 var wave1 = [
 	{"type" : "pause", "time" : 2},
-	{"type" : "enemy" , "kind" : "slime"},
-	{"type" : "pause", "time" : 4},
-	{"type" : "enemy" , "kind" : "slime"},
-	{"type" : "pause", "time" : 2},
 	{"type" : "enemy" , "kind" : "slime"}
+	#{"type" : "pause", "time" : 4},
+	#{"type" : "enemy" , "kind" : "slime"},
+	#{"type" : "pause", "time" : 2},
+	#{"type" : "enemy" , "kind" : "slime"}
 ]
 
 var wave2 =[

@@ -23,6 +23,7 @@ func _integrate_forces(state):
 	var way = (waypoints[waypoint_reached].position-position).normalized()
 	if linear_velocity.length() <= maxspeed:
 		apply_central_force(way*speed)
+		
 	#else:
 	#	linear_velocity = Vector2(0,0)
 
